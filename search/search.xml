@@ -11,7 +11,7 @@
 
 <h2 id="SEO-优化"><a href="#SEO-优化" class="headerlink" title="SEO 优化"></a>SEO 优化</h2><p>在谷歌或者百度的搜索链接中，使用以下格式可以直接搜索自己的域名， 如果能搜索到就说明已经被收录，反之则没有。可以直接搜索自己的域名，或者加一些关键词来更好地判断，例如：<code>site:https://www.yileaf.com/</code></p>
 <h3 id="Google"><a href="#Google" class="headerlink" title="Google"></a>Google</h3><h4 id="向搜索引擎提交网站"><a href="#向搜索引擎提交网站" class="headerlink" title="向搜索引擎提交网站"></a>向搜索引擎提交网站</h4><p>前往地址：<a href="https://search.google.com/search-console/about?hl=zh-CN" target="_blank" rel="noopener">Google Search Console</a>，登录谷歌账号。</p>
-<h4 id="验证域名所有权"><a href="#验证域名所有权" class="headerlink" title="验证域名所有权"></a>验证域名所有权</h4><p>谷歌搜索有多种验证方式，这里我选择谷歌推荐的 HTML 文件上传方式。下载 HTML 验证文件，拷贝到 <code>博客根目录/sources/</code> 文件夹下。为了使 Hexo 不处理此验证文件，并且不生成关于此文件的 <code>sitemap</code>，我们需要打开验证文件，在最上面添加以下代码：</p>
+<h4 id="验证域名所有权"><a href="#验证域名所有权" class="headerlink" title="验证域名所有权"></a>验证域名所有权</h4><p>谷歌搜索有多种验证方式，这里我选择谷歌推荐的 HTML 文件上传方式。下载 HTML 验证文件，拷贝到 <code>blog/sources/</code> 文件夹下。为了使 Hexo 不处理此验证文件，并且不生成关于此文件的 <code>sitemap</code>，我们需要打开验证文件，在最上面添加以下代码：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
 <p>然后重新部署博客</p>
@@ -30,7 +30,7 @@
 
 <h5 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h5><p>重新部署博客。登录<a href="https://search.google.com/search-console/about?hl=zh-CN" target="_blank" rel="noopener">Google Search Console</a> -选择已经验证过的站点，依次点击索引 → 站点地图，右上角「添加新的站点地图」，添加 <code>sitemap.xml</code> 的链接即可。若无报错则站点地图提交成功。</p>
 <p><img src="https://s2.ax1x.com/2020/02/22/3M1l7j.png" alt="添加Google站点地图"></p>
-<h4 id="添加robots-txt"><a href="#添加robots-txt" class="headerlink" title="添加robots.txt"></a>添加robots.txt</h4><p><code>robots.txt</code>（统一小写）是一种存放于网站根目录下的ASCII编码的文本文件，它的作用是告诉搜索引擎此网站中哪些内容是可以被爬取的，哪些是禁止爬取的。<br>在 <code>source</code> 目录下增加 <code>rebots.txt</code> 文件，网站生成后在网站的根目录(<code>站点目录/public/</code>)下</p>
+<h4 id="添加robots-txt"><a href="#添加robots-txt" class="headerlink" title="添加robots.txt"></a>添加robots.txt</h4><p><code>robots.txt</code>（统一小写）是一种存放于网站根目录下的ASCII编码的文本文件，它的作用是告诉搜索引擎此网站中哪些内容是可以被爬取的，哪些是禁止爬取的。<br>在 <code>source</code> 目录下增加 <code>rebots.txt</code> 文件，网站生成后在网站的根目录(<code>blog/public/</code>)下</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line">Allow: /categories/</span><br><span class="line">Allow: /tags/</span><br><span class="line">Allow: /about/</span><br><span class="line">Allow: /links/</span><br><span class="line"></span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /css/</span><br><span class="line">Disallow: /lib/</span><br><span class="line"></span><br><span class="line">Sitemap: https://你的域名/sitemap.xml</span><br><span class="line">Sitemap: https://你的域名/baidusitemap.xml</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -1067,22 +1067,25 @@
 <blockquote>
 <p>我为双向部署，单个仓库去掉一条即可</p>
 </blockquote>
-]]></content>
+<p>在博客根目录安装部署插件：<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>推送博客</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; hexo d</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>美化</tag>
         <tag>建站</tag>
+        <tag>美化</tag>
       </tags>
   </entry>
   <entry>
     <title>Hello World</title>
     <url>/archives/4a17b156.html</url>
-    <content><![CDATA[<img src="https://s2.ax1x.com/2019/12/23/lSUMRO.md.png" width = "960" height = "540" alt="zero" align=center />
-
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <a id="more"></a>
+
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
@@ -1095,7 +1098,7 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
+<img src="https://s2.ax1x.com/2019/12/23/lSUMRO.md.png" width = "960" height = "540" alt="zero" align=center />]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
