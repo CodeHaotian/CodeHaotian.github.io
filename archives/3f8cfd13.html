@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+  <link rel="mask-icon" href="/icon/favicon-48x48.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.yileaf.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search/search.xml"};
+  </script>
+
+  <meta name="description" content="注意事项 除文章内容特殊说明外，版本皆推荐使用官方发行最新稳定版 文章内容仅供参考，不做任何保证 xxx : 此标记为可跳过 如对本文有任何建议或提问皆可留言或联系本人 本文初始版本 1.0 → 目前 1.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 杂谈">
+<meta property="og:url" content="https://www.yileaf.com/archives/3f8cfd13.html">
+<meta property="og:site_name" content="且听风吟">
+<meta property="og:description" content="注意事项 除文章内容特殊说明外，版本皆推荐使用官方发行最新稳定版 文章内容仅供参考，不做任何保证 xxx : 此标记为可跳过 如对本文有任何建议或提问皆可留言或联系本人 本文初始版本 1.0 → 目前 1.1">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-17T06:07:53.000Z">
+<meta property="article:modified_time" content="2020-02-22T07:15:42.658Z">
+<meta property="article:author" content="Rainbow Cat">
+<meta property="article:tag" content="杂谈">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.yileaf.com/archives/3f8cfd13.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+<!-- 看板娘需要jQuery支持 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<!--搞怪欺骗-->
+<script type="text/javascript" src="/js/funny_title.js"></script>
+
+<!-- 引入看板娘 -->
+
+<script src="https://cdn.jsdelivr.net/gh/CodeHaotian/live2d-widget@latest/autoload.js"></script>
+
+  <title>Java 杂谈 | 且听风吟</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">且听风吟</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">🕊️ gu~gu~gu</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">13</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签<span class="badge">9</span></a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links/" rel="section"><i class="fa fa-fw fa-link"></i>友链</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.yileaf.com/archives/3f8cfd13.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Rainbow Cat">
+      <meta itemprop="description" content="一瞥便是惊鸿 芳华乱了浮生">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="且听风吟">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java 杂谈
+        </h1>
+
+       <div class="post-meta">
+			
+				<i class="fa fa-thumb-tack"></i>
+				<font color="RED">置顶</font>
+				<span class="post-meta-divider">|</span>
+			
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-17 14:07:53" itemprop="dateCreated datePublished" datetime="2020-02-17T14:07:53+08:00">2020-02-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-22 15:15:42" itemprop="dateModified" datetime="2020-02-22T15:15:42+08:00">2020-02-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/archives/3f8cfd13.html" class="post-meta-item leancloud_visitors" data-flag-title="Java 杂谈" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/archives/3f8cfd13.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/3f8cfd13.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul>
+<li>除文章内容特殊说明外，版本皆推荐使用官方发行最新稳定版</li>
+<li>文章内容仅供参考，不做任何保证</li>
+<li><del>xxx</del> : 此标记为可跳过</li>
+<li>如对本文有任何建议或提问皆可留言或联系本人</li>
+<li>本文初始版本 1.0 → 目前 1.1</li>
+</ul>
+<a id="more"></a>
+
+<h1 id="Java学习路线"><a href="#Java学习路线" class="headerlink" title="Java学习路线"></a>Java学习路线</h1><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul>
+<li><p>基本网络知识：TCP/IP HTTP/HTTPS</p>
+</li>
+<li><p>基本算法</p>
+</li>
+<li><p>基础API认知：Java SE API → <span class="label success">JDK11</span></p>
+<table>
+<thead>
+<tr>
+<th>概括</th>
+<th>部分细节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Java生态体系</td>
+<td></td>
+</tr>
+<tr>
+<td>Java程序的基本结构</td>
+<td>对象、类、包、方法、引用….</td>
+</tr>
+<tr>
+<td>Java的数据类型</td>
+<td>类型转换、精度丢失….</td>
+</tr>
+<tr>
+<td>Java的运算系统</td>
+<td>各种运算符….</td>
+</tr>
+<tr>
+<td>面向对象</td>
+<td>封装、继承、多态….</td>
+</tr>
+<tr>
+<td>Java的异常体系</td>
+<td>合理处理异常</td>
+</tr>
+<tr>
+<td>Java的IO体系</td>
+<td>BIO、NIO、AIO、Stream…</td>
+</tr>
+<tr>
+<td>多线程</td>
+<td>线程同步、死锁、安全….</td>
+</tr>
+<tr>
+<td>反射</td>
+<td>动态代理….</td>
+</tr>
+<tr>
+<td>Lambda</td>
+<td>理解函数式编程</td>
+</tr>
+<tr>
+<td>注解</td>
+<td>理解注解的原理</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>基本的设计模式</p>
+</li>
+<li><p><font color="red">单元测试必会</font>。好的项目测试代码少不了，如果你留意过Github上的顶级开源项目，那么你会发现它的测试代码和业务代码接近 1:1 。</p>
+</li>
+</ul>
+<hr>
+<h2 id="Java-Web-基础"><a href="#Java-Web-基础" class="headerlink" title="Java Web 基础"></a>Java Web 基础</h2><span class="label info">请先选择一款喜欢的开发工具，并熟练使用 Debug</span>
+
+<ul>
+<li><p><del>HTML5、CSS3、JavaScript</del></p>
+</li>
+<li><p>Java EE 规范</p>
+</li>
+<li><p>Servlet</p>
+</li>
+<li><p>Tomcat</p>
+</li>
+<li><p>Cookie&amp;Session</p>
+</li>
+<li><p>Filter&amp;Listener</p>
+</li>
+</ul>
+<hr>
+<h2 id="工具方面"><a href="#工具方面" class="headerlink" title="工具方面"></a>工具方面</h2><ul>
+<li>操作系统：Linux （CentOS\Ubuntu...）</li>
+<li>代码管理：<del>SVN</del> / <font color="red">Git</font> → 必须熟练</li>
+<li>持续集成 （CI/CD）：Jenkins</li>
+<li>Java项目管理工具：Maven / Gradle</li>
+<li>压力测试：Apache JMeter</li>
+</ul>
+<hr>
+<h2 id="框架方面"><a href="#框架方面" class="headerlink" title="框架方面"></a>框架方面</h2><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ul>
+<li>SQL：MySQL / Oracle / Postgre SQL</li>
+<li>NoSQL：Redis / MongoDB / Memcached / Elasticsearch</li>
+</ul>
+<blockquote>
+<p>到此即可寻找开源项目配合框架分析学习，推荐练习题库 → <a href="https://github.com/hcsp" target="_blank" rel="noopener">https://github.com/hcsp</a></p>
+</blockquote>
+<h3 id="应用层框架"><a href="#应用层框架" class="headerlink" title="应用层框架"></a>应用层框架</h3><ul>
+<li><p><del>SSH: Spring + Struts + Hibernate</del></p>
+</li>
+<li><p>SSM: Spring + Spring mvc + MyBatis</p>
+</li>
+<li><p>Spring Boot</p>
+<table>
+<thead>
+<tr>
+<th>知识点</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WebFlux</td>
+<td>基于<a href="https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&prev=search&rurl=translate.google.com&sl=en&sp=nmt4&u=https://www.reactive-streams.org/&usg=ALkJrhhHaqtXjNiAExlmWTzAxsuYRGV6Pw" target="_blank" rel="noopener">Reactive Streams</a> API构建的<a href="https://translate.googleusercontent.com/translate_c?depth=1&hl=zh-CN&prev=search&rurl=translate.google.com&sl=en&sp=nmt4&u=https://www.reactive-streams.org/&usg=ALkJrhhHaqtXjNiAExlmWTzAxsuYRGV6Pw" target="_blank" rel="noopener">反应流</a> Web应用程序的支持</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>安全处理</td>
+</tr>
+<tr>
+<td>Jpa</td>
+<td>数据操作</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="各种中间件"><a href="#各种中间件" class="headerlink" title="各种中间件"></a>各种中间件</h3><ul>
+<li><p>MQ 消息队列：RabbitMQ ….</p>
+</li>
+<li><p>通信框架：</p>
+<ul>
+<li><p>Dubbo </p>
+</li>
+<li><p>Spring Cloud</p>
+<table>
+<thead>
+<tr>
+<th>知识点</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Eureka</td>
+<td>服务注册中心</td>
+</tr>
+<tr>
+<td>Feign</td>
+<td>微服务之间调用</td>
+</tr>
+<tr>
+<td>Gateway</td>
+<td>网关</td>
+</tr>
+<tr>
+<td>Hystrix</td>
+<td>断路器</td>
+</tr>
+<tr>
+<td>Ribbon</td>
+<td>负载均衡</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/apache/zookeeper" target="_blank" rel="noopener">ZooKeeper</a> 服务注册中心</p>
+</li>
+<li><p><a href="https://www.elastic.co/cn" target="_blank" rel="noopener">Elasticsearch</a>  数据库 搜索引擎</p>
+</li>
+</ul>
+<hr>
+<h2 id="虚拟化-容器化技术"><a href="#虚拟化-容器化技术" class="headerlink" title="虚拟化/容器化技术"></a>虚拟化/容器化技术</h2><ul>
+<li>Docker：容器化</li>
+<li>K8s：kubernetes</li>
+<li>Web 容器：Tomcat、Jetty、Undertow、Netty</li>
+</ul>
+<h1 id="个人开发环境"><a href="#个人开发环境" class="headerlink" title="个人开发环境"></a>个人开发环境</h1><ul>
+<li><p>IntelliJ IDEA  </p>
+<table>
+<thead>
+<tr>
+<th>插件名</th>
+<th>概述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Translation</td>
+<td>翻译用</td>
+</tr>
+<tr>
+<td>TabNine</td>
+<td>代码提示</td>
+</tr>
+<tr>
+<td>RestfulToolkit</td>
+<td>看接口</td>
+</tr>
+<tr>
+<td>MyBatis Log Plugin</td>
+<td>看 MyBatis 运行产生的 Sql</td>
+</tr>
+<tr>
+<td>JRebel</td>
+<td>热加载</td>
+</tr>
+<tr>
+<td>Alibaba Java Coding Guidelines</td>
+<td>检查编码规范</td>
+</tr>
+<tr>
+<td>.ignore</td>
+<td>Git 文件忽略</td>
+</tr>
+<tr>
+<td>Maven Helper</td>
+<td>排查 Maven 依赖冲突</td>
+</tr>
+<tr>
+<td>Lombok</td>
+<td>此处请自行Google</td>
+</tr>
+</tbody></table>
+<p>推荐教程 → <a href="https://github.com/judasn/IntelliJ-IDEA-Tutorial" target="_blank" rel="noopener">IntelliJ IDEA 简体中文专题教程</a></p>
+</li>
+</ul>
+<ul>
+<li><p>Navicat Premium 15 ：数据库可视化操作客户端</p>
+</li>
+<li><p><a href="https://github.com/qishibo/AnotherRedisDesktopManager" target="_blank" rel="noopener">Another.Redis.Desktop.Manager</a>：Redis 可视化操作客户端</p>
+</li>
+<li><p>Xshell + Xftp：官网自称业界最强大的SSH客户机</p>
+</li>
+<li><p>Postman：接口测试</p>
+</li>
+<li><p>常用第三方库：Hutool 、<a href="https://github.com/alibaba/fastjson" target="_blank" rel="noopener">fastjson</a>、<a href="https://github.com/google/guava" target="_blank" rel="noopener">Guava</a>、MyBatis-Plus</p>
+</li>
+</ul>
+<h2 id="碎碎念念"><a href="#碎碎念念" class="headerlink" title="碎碎念念"></a>碎碎念念</h2><ul>
+<li><font color="red">一定要注意编码规范，命名合理</font>，能一行代码搞定的事就不要写两行代码。接口必须写文档，注明需要什么参数返回什么参数。如果你使用的IDEA做到IDEA没有奇怪的颜色提示。</li>
+<li>搜索引擎是个好东西，请善用。</li>
+<li>遇到错误，首先看对应开发工具的日志，定位到具体异常发生处，使用Debug调试，一般而言都能解决，引用某个大佬说过的话：<del>瞎子不配学编程</del>。</li>
+<li>试着阅读源码，也许并没有你想的那么难。</li>
+</ul>
+
+    </div>
+
+    
+    
+    <div>
+    
+      <div style="text-align:center;color: #ccc;font-size:20px;">------------- 本 文 结 束 <i class="fa fa-paw"></i> 感 谢 您 的 阅 读 -------------</div>
+    
+</div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Rainbow Cat
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.yileaf.com/archives/3f8cfd13.html" title="Java 杂谈">https://www.yileaf.com/archives/3f8cfd13.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"><i class="fa fa-tag"></i> 杂谈</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/166bdcf1.html" rel="prev" title="自动更新 Docker 镜像与容器">
+      <i class="fa fa-chevron-left"></i> 自动更新 Docker 镜像与容器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/archives/f5506a48.html" rel="next" title="Hexo 添加全局 APlayer 播放器">
+      Hexo 添加全局 APlayer 播放器 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">1.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java学习路线"><span class="nav-number">2.</span> <span class="nav-text">Java学习路线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">2.1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-Web-基础"><span class="nav-number">2.2.</span> <span class="nav-text">Java Web 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具方面"><span class="nav-number">2.3.</span> <span class="nav-text">工具方面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#框架方面"><span class="nav-number">2.4.</span> <span class="nav-text">框架方面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">2.4.1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用层框架"><span class="nav-number">2.4.2.</span> <span class="nav-text">应用层框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各种中间件"><span class="nav-number">2.4.3.</span> <span class="nav-text">各种中间件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟化-容器化技术"><span class="nav-number">2.5.</span> <span class="nav-text">虚拟化&#x2F;容器化技术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人开发环境"><span class="nav-number">3.</span> <span class="nav-text">个人开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#碎碎念念"><span class="nav-number">3.1.</span> <span class="nav-text">碎碎念念</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Rainbow Cat"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Rainbow Cat</p>
+  <div class="site-description" itemprop="description">一瞥便是惊鸿 芳华乱了浮生</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/ec346a4e0d4e" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;ec346a4e0d4e" rel="noopener" target="_blank"><i class="fa fa-fw fa-heartbeat"></i>简书</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/CodeHaotian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CodeHaotian" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/yileaf" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;yileaf" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2056423011@qq.com" title="E-Mail → mailto:2056423011@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-fas fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rainbow Cat</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">30k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:16</span>
+</div><span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,01,04,00,00,00); //你的建站时间
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" Run for "+diffYears+" Year "+diffDays+" Days "+diffHours+" Hours "+diffMinutes+" m "+diffSeconds+" s";
+	}
+	siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      访客数<span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>人次
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      总访问量<span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>次
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : false,
+      appId      : 'Q5VT9MPBKijsAMmCNMBAgG50-MdYXbMMI',
+      appKey     : 'DCC42olyrpODmP3KYYgPlAoc',
+      placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+      <script type="text/javascript" src="/js/clicklove.js"></script>
+
+
+
+<div class="bg_content">
+  <canvas id="canvas"></canvas>
+</div>
+
+   <script type="text/javascript" src="/js/dynamic_bg.js"></script>
+
+
+
+
+<!-- require APlayer -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+<!--如果将本体放在body里面，导致页面加载出现问题，请尝试放到body体后面-->
+<div class="aplayer" 
+	data-id="3778678" 
+	data-server="netease" 
+	data-type="playlist" 
+	data-fixed="true"	
+	data-order="random"
+	data-volume="0.65"
+	data-autoplay="false"   
+	date-preload="auto"
+	data-theme="#cc543a">
+</div>
+
+
+</body>
+</html>
