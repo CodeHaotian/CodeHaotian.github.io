@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/24/38244e.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/02/24/382LHf.png">
 <meta property="article:published_time" content="2017-01-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-25T06:10:59.060Z">
+<meta property="article:modified_time" content="2020-02-25T12:28:17.068Z">
 <meta property="article:author" content="Rainbow Cat">
 <meta property="article:tag" content="美化">
 <meta property="article:tag" content="建站">
@@ -260,7 +260,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-25 14:10:59" itemprop="dateModified" datetime="2020-02-25T14:10:59+08:00">2020-02-25</time>
+                <time title="修改时间：2020-02-25 20:28:17" itemprop="dateModified" datetime="2020-02-25T20:28:17+08:00">2020-02-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -299,7 +299,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8.3k</span>
+              <span>8.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -384,6 +384,10 @@
 
 <p>在此文件中引入的内容位置为：</p>
 <p><img src="https://s2.ax1x.com/2020/02/24/33XthR.png" alt="最顶层引入"></p>
+<h3 id="外挂边栏配置"><a href="#外挂边栏配置" class="headerlink" title="外挂边栏配置"></a>外挂边栏配置</h3><p>在 <code>blog/source/_data/</code> 新建 <code>sidebar.swig</code>文件。</p>
+<p>然后在主题配置文件中搜索 <code>custom_file_path</code> 选项，取消 <code>sidebar.swig</code>  的注释：</p>
+<figure class="highlight yml"><figcaption><span>next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="string">source/_data/sidebar.swig</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="外挂文章顶部配置"><a href="#外挂文章顶部配置" class="headerlink" title="外挂文章顶部配置"></a>外挂文章顶部配置</h3><p>对于在主题文章 <code>themes\next\layout\_macro\post.swig</code> 文件的修改，迁移到 <code>blog\source\_data\post-meta.swig</code> 文件中，只要属性标签相同会覆盖主题默认。</p>
 <p>然后在主题配置文件中搜索 <code>custom_file_path</code> 选项，取消 <code>post-meta.swig</code> 的注释：</p>
 <figure class="highlight yml"><figcaption><span>next.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="string">......</span></span><br><span class="line">  <span class="attr">postMeta:</span> <span class="string">source/_data/post-meta.swig</span></span><br></pre></td></tr></table></figure>
@@ -529,7 +533,7 @@
     
     <div>
     
-      <div style="text-align:center;color: #ccc;font-size:20px;">------------- 本 文 结 束 <i class="fa fa-paw"></i> 感 谢 您 的 阅 读 -------------</div>
+      <div style="text-align:center;color: #ccc;font-size:18px;">------------- 本 文 结 束 <i class="fa fa-paw"></i> 感 谢 您 的 阅 读 -------------</div>
     
 </div>
         <div class="reward-container">
@@ -650,7 +654,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装前提"><span class="nav-number">1.</span> <span class="nav-text">安装前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建-Hexo"><span class="nav-number">2.</span> <span class="nav-text">搭建 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Next-主题"><span class="nav-number">3.</span> <span class="nav-text">安装 Next 主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据文件"><span class="nav-number">4.</span> <span class="nav-text">数据文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂主题配置"><span class="nav-number">4.1.</span> <span class="nav-text">外挂主题配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂语言配置"><span class="nav-number">4.2.</span> <span class="nav-text">外挂语言配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂样式配置"><span class="nav-number">4.3.</span> <span class="nav-text">外挂样式配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂网站顶部配置"><span class="nav-number">4.4.</span> <span class="nav-text">外挂网站顶部配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂文章顶部配置"><span class="nav-number">4.5.</span> <span class="nav-text">外挂文章顶部配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂文章结束配置"><span class="nav-number">4.6.</span> <span class="nav-text">外挂文章结束配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂结尾配置"><span class="nav-number">4.7.</span> <span class="nav-text">外挂结尾配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂网站结束配置"><span class="nav-number">4.8.</span> <span class="nav-text">外挂网站结束配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置主题"><span class="nav-number">5.</span> <span class="nav-text">配置主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题风格修改"><span class="nav-number">5.1.</span> <span class="nav-text">主题风格修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改网站-Favicon"><span class="nav-number">5.2.</span> <span class="nav-text">修改网站 Favicon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置头像"><span class="nav-number">5.3.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置菜单"><span class="nav-number">5.4.</span> <span class="nav-text">设置菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加社交链接"><span class="nav-number">5.5.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文内链接样式"><span class="nav-number">5.6.</span> <span class="nav-text">修改文内链接样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章阴影效果"><span class="nav-number">5.7.</span> <span class="nav-text">添加文章阴影效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启代码块复制功能"><span class="nav-number">5.8.</span> <span class="nav-text">开启代码块复制功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回到顶部按钮显示百分比"><span class="nav-number">5.9.</span> <span class="nav-text">回到顶部按钮显示百分比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章结束语"><span class="nav-number">5.10.</span> <span class="nav-text">添加文章结束语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启文章打赏"><span class="nav-number">5.11.</span> <span class="nav-text">开启文章打赏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加版权协议"><span class="nav-number">5.12.</span> <span class="nav-text">添加版权协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#底部标签修改"><span class="nav-number">5.13.</span> <span class="nav-text">底部标签修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#底部页脚修改"><span class="nav-number">5.14.</span> <span class="nav-text">底部页脚修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置站点"><span class="nav-number">6.</span> <span class="nav-text">配置站点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件使用"><span class="nav-number">7.</span> <span class="nav-text">插件使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#置顶文章"><span class="nav-number">7.1.</span> <span class="nav-text">置顶文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Url-持久化"><span class="nav-number">7.2.</span> <span class="nav-text">Url 持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地搜索"><span class="nav-number">7.3.</span> <span class="nav-text">本地搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署站点"><span class="nav-number">8.</span> <span class="nav-text">部署站点</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装前提"><span class="nav-number">1.</span> <span class="nav-text">安装前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建-Hexo"><span class="nav-number">2.</span> <span class="nav-text">搭建 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Next-主题"><span class="nav-number">3.</span> <span class="nav-text">安装 Next 主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据文件"><span class="nav-number">4.</span> <span class="nav-text">数据文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂主题配置"><span class="nav-number">4.1.</span> <span class="nav-text">外挂主题配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂语言配置"><span class="nav-number">4.2.</span> <span class="nav-text">外挂语言配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂样式配置"><span class="nav-number">4.3.</span> <span class="nav-text">外挂样式配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂网站顶部配置"><span class="nav-number">4.4.</span> <span class="nav-text">外挂网站顶部配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂边栏配置"><span class="nav-number">4.5.</span> <span class="nav-text">外挂边栏配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂文章顶部配置"><span class="nav-number">4.6.</span> <span class="nav-text">外挂文章顶部配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂文章结束配置"><span class="nav-number">4.7.</span> <span class="nav-text">外挂文章结束配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂结尾配置"><span class="nav-number">4.8.</span> <span class="nav-text">外挂结尾配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外挂网站结束配置"><span class="nav-number">4.9.</span> <span class="nav-text">外挂网站结束配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置主题"><span class="nav-number">5.</span> <span class="nav-text">配置主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题风格修改"><span class="nav-number">5.1.</span> <span class="nav-text">主题风格修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改网站-Favicon"><span class="nav-number">5.2.</span> <span class="nav-text">修改网站 Favicon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置头像"><span class="nav-number">5.3.</span> <span class="nav-text">设置头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置菜单"><span class="nav-number">5.4.</span> <span class="nav-text">设置菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加社交链接"><span class="nav-number">5.5.</span> <span class="nav-text">添加社交链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文内链接样式"><span class="nav-number">5.6.</span> <span class="nav-text">修改文内链接样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章阴影效果"><span class="nav-number">5.7.</span> <span class="nav-text">添加文章阴影效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启代码块复制功能"><span class="nav-number">5.8.</span> <span class="nav-text">开启代码块复制功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回到顶部按钮显示百分比"><span class="nav-number">5.9.</span> <span class="nav-text">回到顶部按钮显示百分比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文章结束语"><span class="nav-number">5.10.</span> <span class="nav-text">添加文章结束语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启文章打赏"><span class="nav-number">5.11.</span> <span class="nav-text">开启文章打赏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加版权协议"><span class="nav-number">5.12.</span> <span class="nav-text">添加版权协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#底部标签修改"><span class="nav-number">5.13.</span> <span class="nav-text">底部标签修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#底部页脚修改"><span class="nav-number">5.14.</span> <span class="nav-text">底部页脚修改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置站点"><span class="nav-number">6.</span> <span class="nav-text">配置站点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件使用"><span class="nav-number">7.</span> <span class="nav-text">插件使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#置顶文章"><span class="nav-number">7.1.</span> <span class="nav-text">置顶文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Url-持久化"><span class="nav-number">7.2.</span> <span class="nav-text">Url 持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地搜索"><span class="nav-number">7.3.</span> <span class="nav-text">本地搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署站点"><span class="nav-number">8.</span> <span class="nav-text">部署站点</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -686,20 +690,51 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://www.jianshu.com/u/ec346a4e0d4e" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;ec346a4e0d4e" rel="noopener" target="_blank"><i class="fa fa-fw fa-heartbeat"></i>简书</a>
+        <a href="https://www.jianshu.com/u/ec346a4e0d4e" title="简书 → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;ec346a4e0d4e" rel="noopener" target="_blank"><i class="fa fa-fw fa-heartbeat"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/CodeHaotian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CodeHaotian" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/CodeHaotian" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;CodeHaotian" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://t.me/yileaf" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;yileaf" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+        <a href="https://t.me/yileaf" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;yileaf" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:2056423011@qq.com" title="E-Mail → mailto:2056423011@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:2056423011@qq.com" title="E-Mail → mailto:2056423011@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
       </span>
   </div>
 
 
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+		<!-- 选择合适的icon -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+		<!-- 这里对应下文主题配置文件的recent_posts_title值 -->
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+		<!-- 文章排序规格，-updated 按照文章更新时间倒排 -->
+        
+		 <!-- 显示四条近期文章-->
+        
+          <li>
+            <a href="/archives/15baca53.html" title="Hexo-NexT 后续优化" target="_blank">Hexo-NexT 后续优化</a>
+          </li>
+        
+          <li>
+            <a href="/archives/8613f919.html" title="Hexo 建站" target="_blank">Hexo 建站</a>
+          </li>
+        
+          <li>
+            <a href="/archives/3f8cfd13.html" title="Java 杂谈" target="_blank">Java 杂谈</a>
+          </li>
+        
+          <li>
+            <a href="/archives/1e319277.html" title="Hexo SEO 优化" target="_blank">Hexo SEO 优化</a>
+          </li>
+        
+      </ul>
+    </div>
 
       </div>
 
@@ -727,12 +762,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">31k</span>
+    <span title="站点总字数">33k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:18</span>
+    <span title="站点阅读时长">1:22</span>
 </div><span id="sitetime"></span>
 <script language=javascript>
 	function siteTime(){

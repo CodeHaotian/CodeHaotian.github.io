@@ -1201,7 +1201,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #34ffcd;
+  background: #ff417c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2541,7 +2541,6 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-author-item {
   margin: 5px 0 0;
-  width: 50%;
 }
 .links-of-author-item a,
 .links-of-author-item span.exturl {
@@ -2616,4 +2615,16 @@ ul.breadcrumb li + li:last-child {
   background-image: -webkit-linear-gradient(left, #aa4b6b, #6b6b83, #3b8d99);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.links-of-blogroll-title {
+  font-size: 15px;
+}
+.links-of-blogroll-list a {
+  font-weight: bold;
+  border-bottom: none;
+}
+.links-of-blogroll-list a:hover {
+  color: #428bca;
+  font-weight: bold;
+  border-bottom: 1px solid #428bca;
 }
