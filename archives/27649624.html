@@ -67,6 +67,15 @@
 
   <title>添加 Live2D 看板娘 | 且听风吟</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KZCY1PM96E"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KZCY1PM96E');
+      }
+    </script>
 
 
 
@@ -364,6 +373,26 @@
       <div style="text-align:center;color: #ccc;font-size:20px;">------------- 本 文 结 束 <i class="fa fa-paw"></i> 感 谢 您 的 阅 读 -------------</div>
     
 </div>
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Rainbow Cat 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Rainbow Cat 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
         
 
 <div>
@@ -543,7 +572,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:18</span>
 </div><span id="sitetime"></span>
 <script language=javascript>
 	function siteTime(){
