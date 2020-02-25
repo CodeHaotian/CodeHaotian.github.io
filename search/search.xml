@@ -799,7 +799,7 @@
     <title>Hexo-NexT 后续优化</title>
     <url>/archives/15baca53.html</url>
     <content><![CDATA[<div class="note info">
-            <p>##添加侧边栏近期文章</p>
+            <h2 id="侧边栏添加近期文章"><a href="#侧边栏添加近期文章" class="headerlink" title="侧边栏添加近期文章"></a>侧边栏添加近期文章</h2>
           </div>
 
 <p>打开<code>blog\source\_data\sidebar.swig</code>文件，加入以下代码：</p>
@@ -807,6 +807,8 @@
 
 <p>打开主题配置文件，在最后添加如下内容：</p>
 <figure class="highlight yml"><figcaption><span>next.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># 近期文章配置  </span></span><br><span class="line"><span class="attr">recent_posts_title:</span> <span class="string">近期文章</span></span><br><span class="line"><span class="attr">recent_posts_layout:</span> <span class="string">block</span></span><br><span class="line"><span class="attr">recent_posts:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <p>重启博客效果如下：</p>
 <p><img src="https://s2.ax1x.com/2020/02/25/3t3br9.png" alt="近期文章默认效果"></p>
@@ -821,8 +823,6 @@
 
 <p>优化后效果如下：</p>
 <p><img src="https://s2.ax1x.com/2020/02/25/3tBqqf.png" alt="近期文章效果改"></p>
-<a id="more"></a>
-
 <div class="note info">
             <h2 id="首页文章折叠"><a href="#首页文章折叠" class="headerlink" title="首页文章折叠"></a>首页文章折叠</h2>
           </div>
