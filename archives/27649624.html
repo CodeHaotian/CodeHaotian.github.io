@@ -21,29 +21,18 @@
     var CONFIG = {"hostname":"www.yileaf.com","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search/search.xml"};
   </script>
 
-  <meta name="description" content="Hexo博客本身是支持看板娘的，但是原本的只有一个人物，这里使用stevenjoezhang大佬的魔改版，一个可以说话，可以换装的看板娘。  注意：如果你并不熟悉 Git，也不熟悉 GitHub ，那么请先 Google 了解基本使用。">
+  <meta name="description" content="本文章已加密🐇, 请输入密码查看.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="添加 Live2D 看板娘">
 <meta property="og:url" content="https://www.yileaf.com/archives/27649624.html">
 <meta property="og:site_name" content="且听风吟">
-<meta property="og:description" content="Hexo博客本身是支持看板娘的，但是原本的只有一个人物，这里使用stevenjoezhang大佬的魔改版，一个可以说话，可以换装的看板娘。  注意：如果你并不熟悉 Git，也不熟悉 GitHub ，那么请先 Google 了解基本使用。">
+<meta property="og:description" content="本文章已加密🐇, 请输入密码查看.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/24/lCO0hQ.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/24/lCjJdf.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/24/lCvPk8.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/24/lCvscd.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/24/lCvXNT.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/24/lCxQbt.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/24/lCxY8g.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/24/lCxBV0.png">
-<meta property="og:image" content="https://s2.ax1x.com/2019/12/24/lCx4Vx.png">
-<meta property="og:image" content="https://www.yileaf.com/images/model.png">
 <meta property="article:published_time" content="2019-12-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-24T07:42:18.468Z">
+<meta property="article:modified_time" content="2020-02-28T06:27:42.589Z">
 <meta property="article:author" content="Rainbow Cat">
 <meta property="article:tag" content="美化">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/12/24/lCO0hQ.png">
 
 <link rel="canonical" href="https://www.yileaf.com/archives/27649624.html">
 
@@ -257,7 +246,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-24 15:42:18" itemprop="dateModified" datetime="2020-02-24T15:42:18+08:00">2020-02-24</time>
+                <time title="修改时间：2020-02-28 14:27:42" itemprop="dateModified" datetime="2020-02-28T14:27:42+08:00">2020-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -315,55 +304,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Hexo博客本身是支持看板娘的，但是原本的只有一个人物，这里使用<a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">stevenjoezhang</a>大佬的魔改版，一个可以说话，可以换装的看板娘。</p>
-<blockquote>
-<p>注意：如果你并不熟悉 Git，也不熟悉 GitHub ，那么请先 Google 了解基本使用。</p>
-</blockquote>
-<a id="more"></a>    
-
-<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p>请先仔细阅读项目的<code>README.md</code>文件。看板娘需要<font color='red'>Font Awesome</font>的支持，别忘了引入到自己的博客。</p>
-<blockquote>
-<p>如果网页中已经加载了 Font Awesome，就不要重复加载了</p>
-</blockquote>
-<p>向 Next 中添加看板娘，找到<code>head.swig</code>文件，在最后添加如下代码:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 引入看板娘 --&gt;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.live2d.enable %&#125;</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
-<p>编辑主题配置文件，在最后添加如下内容：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用看板娘</span></span><br><span class="line"><span class="attr">live2d:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>重新部署博客<code>hexo s --debug</code>打开浏览器输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>大概默认效果如下：</p>
-<p><img src="https://s2.ax1x.com/2019/12/24/lCO0hQ.png" alt="默认看板娘"></p>
-<h2 id="个性定制"><a href="#个性定制" class="headerlink" title="个性定制"></a>个性定制</h2><p>1.将 <a href="https://github.com/stevenjoezhang/live2d-widget" target="_blank" rel="noopener">live2d-widget</a> 项目<code>Fork</code>一份到自己的仓库，<code>git clone</code>到本地电脑。</p>
-<blockquote>
-<p>项目配置文件说明</p>
-<ul>
-<li><code>autoload.js</code>：自动加载看板娘</li>
-<li><code>waifu.css</code>：看板娘样式</li>
-<li><code>waifu-tips.js</code>：看板娘说话的脚本</li>
-<li><code>waifu-tips.json</code>：看板娘说话的内容</li>
-</ul>
-</blockquote>
-<p>2.<code>autoload.js</code>的开头定义了加载看板娘的路径，这里替换为自己仓库的地址：</p>
-<p><img src="https://s2.ax1x.com/2019/12/24/lCjJdf.png" alt="修改cdn资源地址"></p>
-<ul>
-<li><font color='red'>注意：<code>CodeHaotian</code> 请替换为自己的github用户名。由于使用jsdelivr提供的cdn服务，需要发布版本，@后面为等下发布的版本号。</font></li>
-</ul>
-<p>3.在<code>waifu.css</code>中修改看板娘样式，属性都可通过浏览器控制台查看变化找寻。</p>
-<p><img src="https://s2.ax1x.com/2019/12/24/lCvPk8.png" alt="看板娘位置调右"></p>
-<p><img src="https://s2.ax1x.com/2019/12/24/lCvscd.png" alt="工具栏调左"></p>
-<p>4.修改<code>waifu-tips.js</code>中的初始加载模型，当进行角色时切换编号会在浏览器<code>Console</code>中有输出，选择一款喜欢的做初始样式。</p>
-<p><img src="https://s2.ax1x.com/2019/12/24/lCvXNT.png" alt="查看模型"></p>
-<p><img src="https://s2.ax1x.com/2019/12/24/lCxQbt.png" alt="修改看板娘初始模型"></p>
-<p>5.将修改后的版本提交到自己的仓库，为使用免费cdn服务，需进行新版本发布。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m "new live2d widget"</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<p><img src="https://s2.ax1x.com/2019/12/24/lCxY8g.png" alt="发布版本1"></p>
-<p><img src="https://s2.ax1x.com/2019/12/24/lCxBV0.png" alt="发布版本2"></p>
-<p><img src="https://s2.ax1x.com/2019/12/24/lCx4Vx.png" alt="发布版本3"></p>
-<p>6.打开<code>head.swig</code>文件，修改为最新发布的版本：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!-- 引入看板娘,记得更改为自己的用户名和版本号，或者直接最新 --&gt;</span><br><span class="line">&#123;% <span class="keyword">if</span> theme.live2d.enable %&#125;</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/gh/CodeHaotian/live2d-widget@latest/autoload.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
-<ol start="7">
-<li>重新部署博客，效果如下：</li>
-</ol>
-<p><img src="../images/model.png" alt="模型效果"></p>
-
+        <div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">(* ⓛ ω ⓛ *)请在此处输入密码，查看加密内容.</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="d55e33f4201ab97f6683f4974a54e77a99df6d06c6cc2ca47cc6634bb639ff87">e18d0ef3a09e59554af524ab282fc11596f0ff0448e10b68da550916f4e144ce606177ae38ec99381fc5a23e0c3412dc7af3b807100e003699c3666aef51a0616d90313c11cef8807741c1c480d1f578f7c5da3eae265e8a425f26ae2f680943400607c02de8f2446f17b48a3b7f43770c4d900b6e7db991f679c7533539d7a9dc0fcc589d165ca5281a401f00daf3a0400ddef99654fc7c9fd4a24e681254e27ce81293fcaff5059b62307b84c0b92873896c7f5435485fe2d88f6af3f09d31e4532dab83b853eaad88ee596aa46e870e04e1a34a0377e5b316d61c1e21bc20bac2fa6c3415fb9b45e3d4cc5271cbcf3179cc65a6684649e499bab292998a045dfb587446046c63eb946a941ac1b9beff97517674dffdd88740ebeaed81f57a2b3cfcaa67bce899a6fee20bedd786036c3f932ca3add71931409bfa405dd6fdd795e1dce0dae77f5a4d14eb0e99a00137a90a69d82d1a29ce985ccc7905f1db4a905291da88ff9ce2cae0ee1b0246b9948a74d04afe652f776d4b8ad36f3700aa04959151f9face3aba9728dd542cc8da9736e6b0eb22100fbe390023dfebb77a5be6c0feafb31a624e318fa6bc2b00ce2cad9d870f2f5a50632779a8118b7b85f6f921094073caa550adae8bdbf7dae15db44e4d5358d109f56da3e69450987199e879eb3ed7d2d744108a777546f9f1f1e6c0c913f5d4cc6e235cb741d45060074603456f23e811a4c81d70ae0f50f0baafc5451d15587aa3bdfc9186ab859f205d0a32b3fbd599aee0c1469869b5ee010fcf8afa538944c3efb05ddce8289f4e09c3f70a2d8cf7bba1d8da9b1b8ffd8ec8f4ae6ef32b68bd3af7283887c28d1c6f383fe58da742cb289c548c827e592ee5a4b048caf85076de7bd5c77936d1cdf8c6c957dd9b58b307c03cf3bd054de0f45a59515d71119f9b9f8b1d8efdc1b6ceb9fb8262aeee8ae8de4522c45c1bc93e06398b3eb51fced90abf39bb6e6614df2220a923b947500356dd77872f0a76bc424b85db79921d42a8056a0aa70e3592a92649468efea7665a74531d06986b8a0965508ff6f31a282c75d22158c62ecce6d8ade6a941eef58c65d74c577f160e861df270be165ff62b06ae0530c40ee1cedda0b94287fcd9d7671b506796fd696837a1fe01ec60348bae3688b6d8cf675bfa57a9cc42a73703ef81a6c57125589d97f9591aa7ccf86388cc96c295e532c1fb29580b89aeb8d7dd512a586c672727dfcf749eb63fbacedf80e3b499b5f89d45f943034740921874ea01f493885943b31a7881350c771797fc0a86ddcdc469cafcf43dc495bbdc5f98760a2ca92c7bf7db70f38a9e3daa4a4494f43e65fd325f3d20cbd10e9a92e8d14a484e1207769660edb6cb05b1c155363d8eb132a584348b6a030a3870a6be3c240278367ec3943206caea060dbec9ef875a4d4e6efa4d305780ef43b5f4f702613a9ebf6c3a4f838063f03948803c224ba3b12df39b753aa1f18c2f16be904cb2280b135da975dbfa60918354f6cc32bb185e43e7bed0d6c8bd05badd5e18012a9f5d9cf4af8416b45e645d88f9bf492497bd15b6401844f36e780233ebdb5cf805ef7a8940c262e6957b655c8325547286738209b046fd59c4561ed39203194446285e44d4c89f6cd601f0215a61e645925ee57b2d4f2166734f1f0374e06bd29c161a565a174481521ac04a02c5b4888e5385ffd50a38cedb8e08cac9a15f02783ace42936dc2cf22021282c44528ebe2aab41e1188e56c950536d564a6c722baee4357886c4b0b1fed378afc9230a0a4b9097f116c4bc049f25c3649fe59a41fa0079b9c78c13e5cf8dae5c22fb02fde296845234f49d9d3222a246462b225f6b8a12150640e8f45100a00f85174d9cbb3b26751f503009cddd05d30fc7d054d133d580b5adcff45224ef8cc17ff03f4e0e2dfe7ce0d275be9f10b079a48d7a783c84419f38f4f4778561c2d96901184da42195a5e5e12a954c0876454a410df6cac5a82e13a612eef1066692afbd46057062f509262e1b3da7b2adf92db48540564949ad54393a7dc802900e88a7c37e33a5e59d96d0f687b11a51827266fcf50c6e296a09bc188f3b06a93fd30c941a0cea85d2d284fee884fbf786b5b6c8b687e835ffdb12c7c089ca3e6091d8ff5857234d07b838206279c65079e2a5b8c31c4b311c57922989d393cfd93397d3a6b90535b3d82f62e3a74e25a54cf6884c8e8eed0c9fa873250ff8aff1e2fa48c786015bddca121ce14c34f77b6ab1a96e8c138062796096348f67823a3cdd08e7b07f7a0097d3fc072af6db901e8b35d62ebc42c01a3f23cab52a0463f0515b6af4c696eec4102abad4b49e05c9e347cb7a5e6236c1b35917d04fce2414f90a916225148375253593456f18864fb64253bcd9b62126f1225b9fb14bf2a7ad8d9160ecb80922b4dccce3de7f6a2380b278b74ac34fd6edbf2cdc0a98ba590e933184813498a509f79ed8c386f6990c1062ebf5b12bf7c104c35464a4c1d5a8c67862a48af109638857c6be8b30197fa2e07a3fe1c774c7b8dfb071722ffbea0c8eeb15f2066c32b82d920291a66815384fa873d34463667bd48968cb9899b19cdc327b916957e73aab4eada8457679817e489868e27bfe509cedb66444294033dc6cc49190ad78c578587992fcab5f41d5773a12e3deff8133598ff2cad8bb75c5bf20e02cf962240cbf4e620e8883b5292c5304c40f49562bcbabe60e863cc2059731e36ac2e1a0f7ec7f39eb49adb57930472019c255c95e313e73b068d35148e0556a780ceca6670306b6066d0f6fcabddb682aba0b6ddaedb3f308c069beceb9d31750628a2528e716337b9ba701e6f87be022bbff9d34e586dbdb8dc1bc7df88def8c91c1c11021fe259e992a6df0c48c774251acfcd66669e2318c6276e4bae671067fd63a1ca498544e0e9dd0d0e43ce0532adc9858f5948c1c96c709342c492d11df6b873935089d87620f025182ad96901f7d3aefddc29d5da104b824c636d725be6fbc59316d82e55a48dee2a391668067263eb70c645ab3127c7a6e39405d7553033291cdad4cdeb44b80249c7e14582272037b1f96d626109fb083ef0eaaa751ed05ff12ebbf9ee3422b67c15bccddfada49d09cd56e698048f4a4e04e05a1cfe3ccb3853fd40a30665efdc80356c21214c2e9cacacde70ed57721e049db42091465b586706d422c62a7b22ac21f9002fd752471ead20cf2ab50de7283df88a210347a6e35d28a7e0c7c4ded4c47551c7f09b7716608918a04fc1620603791165b93923c45329c863648add21e0eb1d5be338e826a91c84d47d47d478b4094cdffede2047195f4fa83be5961fb774c0e358c1377153ed72b405d27244352077da69ddeadab623c2ead1e02958df4b9fb144ebb32286e661ccbb31e36658ccd99d79d7ec607dd20248db9ccad383a6269330dae518c72f237aa6f72db7031b0bc2df18144c7b80ef22d14f8c6f519be2b5a55ef2e9389cce0caf0be90b5498c6dc96929a98f1c18aaed0fda5b4751740dd5d917f59d7d733aa21611f74758d060403f4cadd581c38fd801755e7a99f36a4b15956749a5269a949d03fce1912c3fd72f6c1e809d3bb1f0029d55628bd082d1f1b71d9d352c01cb460a17f63dcc2ee07e37ed32415aadccc4ae5309884cba6c67acbc123f4aeecdb81341494a8434cf420d73b5ca207347629f7eeb9d8cbcaca61d898bf7fdeabe609cd653ea667e5e5cef7e232d439d93c4284b427f39fa3e542ffb006eb8655f0c494ee870d0f4fa19ed28a4eedbaea8ee5b89510b0a65095455b5f9039fe50d8750307700801142de3547fe6d55f46fcc90cd138ced4e86def88f18c713e1f0b4c636f433ebf2844fd7a4eecede4045871ebd65e39c74175ceea25dea36cbb5a49200e3eaad89db7372234ee59a47cd84f7c8ec59dba1cdb57ebce86371c83a90041e5e1d55e0078288768add781e54c93584d5f9f6c80d902e69bfa55f7cc8d4d2293807696c58f2c596d7bf5bec21e4aadd1d6227c15d78e82c40064bbd7d7f5bd9b5e9d8ef22d83167925eb68b8758d28515336bdf1dc25aa9d6cdf8545c603469c36f7bf2e59ebd80a9f2ea1a7d31269eeb04fe54acfd9573636348a57570bcb440d72970c843f384d43b1f5def9c70e63489e69e8e1af5e21c7107fb97bb80b31d8390af7255932d5d68c770265f749b6868f943261c3c88f0cb6b6f93357011368a223280d09090222614dd0779e0c2047e575dce758300a181b1b3fbe3f157e5d63f2a6a633b08a5823b9b00a9f042bcd08266ab7f066ff1e8ddc1fef4612ab236e77e41fa9e21a8126ce72952b99cd23214a85a01b2ef39959370599dea421b824302baf08a0fea03b9839610cd97bb3c29178652da432b01ac7f9e7281005f7f2a1a324fadf2d99400ce73d460d3bd9c151967938310eed5ec1b4e743b09fb7f8fcda350e8995cf54acf9f52d129fb9d4e3c545c28fe44517298849adde4797c42299b6b3a58092607143fe750f0d8763406fd9a642b72c7d2eea5af6e1f82da562e81accae3840798dc0f2153e1f7b7a7fa6ddbbf5c3d97a229a5718fa7fd647941d22de480cf1ff8786448ea7527f8cc50b662b7d0e084caeb5c32470d462aa935caeeae4d7f7d58e51607ab1841e524ee11a624dd69742372d2f3fea4c28b5dd81fe11a9c90c5a594ac91394291ddb99594e6ff1dc5889b83ce2fd5e06d859844ec29bacf734fe27b35687b4142cf2e948702d8ab5b1fbd29bef3096256cc22c6412a54d42dec5fe3d0b3ce2d1b3a40e4abea63fa556061e1bf9ca869332ab54440fb4607d8d5513a2d016b80a57d4b6f78c56bc7be483e8de67a72f6c4f89a9a1450968986a4edd7bd1c9424420189ba9249de4b87b945da01a81e3f6b7bbff1e00dc5310d75e26eedb99f2ed72e02bb9c0e1344eea668238fbe1b4e1f25fc5669b3ea96f3b89f21e8f6181ad6cb3b1cf2c511353ea3744089d2c09e448403a2ba6dacf1fd48d2cdd52d5c380520602e29202d8c83b74c31fd4c4382bffd77073027fbac1510472e39c09dcca873cf8797d744fdc1646bc588db70fad8ac1be9e29142e1a5f1d0f1c4bbb598e4a8031bdc6cd1c4e400d892d1565c2f2ea23873c13cec8d7d1fd5bbc7dd9b344d031263af3bd24a690e2f8d2f27d115c654cafd12d413fe224212282b16cff1c4fd33f663b8ad6adbad043ae35f46e10ccd60819e2816e395ef8fcb4887a9fd62ce61a9e7d475ba174cd7a93caae5a4228529ade1f4b74e09a525ba13a04f336f39f208b62e68a786c2dcc39711aae012183835de749b021011b57a71460b52d34c0c7362a8f9e795d5dca69db036dd05234f9da2b9672f9875397aae4d4e0aa2ab780f4ae162def9b9192cd4f3b4229022afd7e3f45285db908ca7e289cf9ce5154d4d5369ada31d386ffd4a5af940efc18ba2eac7f1779456465373f8e70110ff78027530a6a72cf0b0db1584777d2a123e027e7a073269d91006637411f12b7cd38c8c65f51af0f68f8cdde2e104b992ae6d6ef3b076aad42371bc40b487ccf07a57e888a84cf5c4bd73169aa324ef675408763ae19c92bb4f6d04dc62b89e52ad7a9f4e2d34da7743c43d293fa48995ca34977802a95fd7a2162bfc07d0020fa51a269f04328b985c61337fc9bd943222097f430cfafce9b6d6cecc3d0afb6e296a7d6d7f62d7696e72669f15f8a4b673d87eef7e9232d96c811a745b1b6a5ce62beb46a38cbe58e7c0ee01a3cc205234469fe96d9178977820690bff59402ad8bdc023bc087f4b05e89edb5751433685dbec89a1044ec13b9ad199dd9ea6ba117999e3a7007ece92e220046362312ee05fbc5b9c50239817a5be06e2fa023b433952901d30f265c46f180554d5016e27469e628a09e58bc61cf82ea87f405fb664492b388d5afda14b7f2119115bdee14fb2ba95eb208936062c456f6a3ace778a97ea3853491775cf9f2d603975b6f609788e14cd70d75a04428178ef694cb66df2f825d95b6c85378a98b0d4ae947882bb604d3dfc393d79be9c02fabd090d444781039357c661ec8402ceb127225e2d098e9cd9809f04495078a6bf3b8e7b64fba9ef9d033efba0528f047822a4ac3af6f3c1a9c3ce242b032ec0b7f8f74b6009a7ac70098d4eed8c9902ded9ced08ece61504407391ab6222e57c2139b4538ea0659470950dc03223b095db51385fd7917c4b14ba5e185caf968fdae46b6e5532b385589cff8a939e183d41f9ea712ec1de7c8eda8b4e952d9d69bf0d9f794f68f547a61ecd0d4c1d0f255dce804f965447e088737f9800694e3d03fd920639424b2ba7d0ae0b7145464570d9bc825c714bf2b37d8e936afc81b0360bb4d099ad7bd9704c347536c32f19bfa16a0b11caf14b716c30d1b0f1de51ed83f5525d59ecddbc063f3c36b4eb4edbcf83703abf18684435c1970d49735568ec783ea75b0c5c6121106daa5a898102b15e9f8354b0b192a6bbcf6c5bdcfd84263c940749b37e2608ab8131aef7674fea5ac071914260f595bb9c3bdf65a2f4f07d208d3c714c44336e5791b0ca7133f856c504d0759e0e7536bb4e96c5aa93dbe211d6ba06c85fbe5b322d43f5188250c652e2062b48058b9d947475a9d61554ffec51843456eac969b790314457d012a68faa49e08a5003b744c92f396fe777b0ce75b3a7a062bafb6b0926b4d02549ae2b381762c971e4b9ac3a6bf27b3416ae95c93ee878761b15f31c3192abfe0b3f418234075a0fcbd08dd853d5df3dbed1c4c17c0827e4e0401c25788feff3f2b0254d67f0b7cff1a8ef56826bd3a2209b80830e3af453e46e4cd6dc1382bf9a3c38e298aff3dfc20c89cc1357b55ec68be8bd06dc4f8f115e58544b9ef00be0152e70df6fa1868cf3bd49c3b3632c13dc16b8e1eadb1a0617c7ede95a4d95012bd5bbe2965a963718fcb1bb1bd5b59613f14d9852543feadce8b33aa9f08264218775c88f4ad5e03fa4a89b63daf9abb23fd791c289e0ca10a9639fed00b61fbfc97b0625d4f19b228cd7451b936f70f1cb35c37e1ee416fee067b2fa164ff0e092372451707d742d706d92f0fc922ff43a334fef08d17f79c50933e658d69146bb601852c875e01adaa71456a175e27f66f709b365a887a0b7e9553c01b76ccb2b5a6533779c2f5e29aca82b11724df829c88293e9368604ee5f2cf6c58ec3fe07f92dd8c99580731a58c1fceb472a370765866bb2822cc7dc3a57aee65bd58ead51fd7075c89a58f48199b7bf1bd729aaaf80cc0ef3642541aca35f42d0fcf5a23f96254f67b38fe67cdcdf26265ab7877454c3d4c01e10b7a71f558155541baaf3e9284754861faace71b5a563817c79b2436bdfed750019bfc4174c3c722fa00fd2d98c6f45319c6dcc73832bd94dcb191829292c71968db704b56cfd3772cafab7b1d49a5f4b49b5768c5978852a653ba80b4e3025af125895bb5b328dd7045f915dfacfaba8f4c04b1dc6fcc007ba37700b952d7ae661173edfb332964907e9b809139406040a564e3f95a2c89c32f153e64bc6e9b79ac7b147fe2c0e7bbddf98f2bddd3a20c49d022b6846d13a996b342cf69bd49e89c4b800c59e8c2fbe038a966635d6ffb863b42cc2584e1931beb91d9a61271283850692d2a2e09c524227809dffc46d225534525c9048ba7c15b9e7e07d4807717b1760a4ef64f14a4dedf9422e0378dcafd1d0f3a71abed53ff9ea69ad15437b910b7c75ca3a5268c4f31d90414898422b5f506ec7bc52f1e5bd4f600de5489233949bd75905d4bc5e5c20c5a3ad42a8004ce008ef50093b8a323dab1a5ff1d19544f76e6a2fe5df3150a045e9746926fd2938be43a58c6c99b9e26bf58addfcff66878a72dd533c8ec6a927e859ad5fb5b9a608a36c6e8cc4ecbd5df499ab4460f554e66b642dda604a4bfc0c635e4ac13cb79120580f439a3c5916f370c179fb16ac5ebbd44c4f90708995a9eeb04a0108196f972af84e563b96889d28910d227058cd5f44dc322a827e7693a1e2ba8d0bd64bb51d4403a80a3b153e770746b733ab2cd3c99a755a66490604c971e0734f621d809e8f6c0acd896caf917cdb99f34635af0e0fe37262ca05c625da30edc72ccbfde2631f88676143d7d274b010cac6db7015e683f6df77a3ad9af8a5a0e443</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -490,7 +439,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个性定制"><span class="nav-number">2.</span> <span class="nav-text">个性定制</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -554,11 +502,11 @@
 		 <!-- 显示四条近期文章-->
         
           <li>
-            <a href="/archives/15baca53.html" title="Hexo-NexT 后续优化" target="_blank">Hexo-NexT 后续优化</a>
+            <a href="/archives/8613f919.html" title="Hexo 建站" target="_blank">Hexo 建站</a>
           </li>
         
           <li>
-            <a href="/archives/8613f919.html" title="Hexo 建站" target="_blank">Hexo 建站</a>
+            <a href="/archives/27649624.html" title="添加 Live2D 看板娘" target="_blank">添加 Live2D 看板娘</a>
           </li>
         
           <li>
@@ -566,7 +514,7 @@
           </li>
         
           <li>
-            <a href="/archives/1e319277.html" title="Hexo SEO 优化" target="_blank">Hexo SEO 优化</a>
+            <a href="/archives/15baca53.html" title="Hexo-NexT 后续优化" target="_blank">Hexo-NexT 后续优化</a>
           </li>
         
       </ul>
@@ -603,7 +551,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:22</span>
+    <span title="站点阅读时长">1:23</span>
 </div><span id="sitetime"></span>
 <script language=javascript>
 	function siteTime(){
