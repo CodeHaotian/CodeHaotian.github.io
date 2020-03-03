@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yileaf.com/links/linklist.json</loc>
+    
+    <lastmod>2020-03-03T05:48:23.730Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yileaf.com/archives/8613f919.html</loc>
     
     <lastmod>2020-02-28T06:32:38.539Z</lastmod>
@@ -117,13 +124,6 @@
     <loc>https://www.yileaf.com/google2defba72eef54761.html</loc>
     
     <lastmod>2020-02-22T04:11:00.536Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yileaf.com/links/linklist.json</loc>
-    
-    <lastmod>2020-01-29T07:37:55.424Z</lastmod>
     
   </url>
   
