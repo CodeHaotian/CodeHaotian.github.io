@@ -119,7 +119,7 @@
 <li>文章内容仅供参考，不做任何保证</li>
 <li><del>xxx</del> : 此标记为可跳过</li>
 <li>如对本文有任何建议或提问皆可留言或联系本人</li>
-<li>本文初始版本 1.0 → 目前 1.2</li>
+<li>本文初始版本 1.0 → 目前 1.3</li>
 </ul>
 <a id="more"></a>
 
@@ -316,6 +316,8 @@
 </li>
 <li><p><a href="https://www.elastic.co/cn" target="_blank" rel="noopener">Elasticsearch</a>  数据库 搜索引擎</p>
 </li>
+<li><p><a href="https://github.com/xuxueli/xxl-job" target="_blank" rel="noopener">xxl-job</a>：分布式可视化任务调度中心 </p>
+</li>
 </ul>
 <hr>
 <h2 id="虚拟化-容器化技术"><a href="#虚拟化-容器化技术" class="headerlink" title="虚拟化/容器化技术"></a>虚拟化/容器化技术</h2><ul>
@@ -345,12 +347,20 @@
 <td>看接口</td>
 </tr>
 <tr>
+<td><a href="https://github.com/gejun123456/MyBatisCodeHelper-Pro" target="_blank" rel="noopener">MyBatisCodeHelper-Pro</a></td>
+<td>MyBatis 辅助插件，用过的人都知道</td>
+</tr>
+<tr>
 <td>MyBatis Log Plugin</td>
 <td>看 MyBatis 运行产生的 Sql</td>
 </tr>
 <tr>
 <td>JRebel</td>
 <td>热加载</td>
+</tr>
+<tr>
+<td>SonarLint</td>
+<td>代码质量检查</td>
 </tr>
 <tr>
 <td>Alibaba Java Coding Guidelines</td>
@@ -367,6 +377,10 @@
 <tr>
 <td>Lombok</td>
 <td>此处请自行Google</td>
+</tr>
+<tr>
+<td>Background Image Plus</td>
+<td>背景图片更换</td>
 </tr>
 </tbody></table>
 <p>推荐教程 → <a href="https://github.com/judasn/IntelliJ-IDEA-Tutorial" target="_blank" rel="noopener">IntelliJ IDEA 简体中文专题教程</a></p>
@@ -903,6 +917,32 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/archives/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<a id="more"></a>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<img src="https://s2.ax1x.com/2019/12/23/lSUMRO.md.png" width = "960" height = "540" alt="zero" align=center />]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>美化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 建站</title>
     <url>/archives/8613f919.html</url>
     <content><![CDATA[<h2 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h2><p>安装 Hexo 相当简单，只需要先安装下列应用程序即可：</p>
@@ -1131,34 +1171,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>美化</tag>
         <tag>建站</tag>
-        <tag>美化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/archives/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<a id="more"></a>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<img src="https://s2.ax1x.com/2019/12/23/lSUMRO.md.png" width = "960" height = "540" alt="zero" align=center />]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>美化</tag>
       </tags>
   </entry>
 </search>
