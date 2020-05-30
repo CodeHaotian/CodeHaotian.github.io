@@ -343,7 +343,7 @@
 <td>代码提示</td>
 </tr>
 <tr>
-<td>RestfulToolkit</td>
+<td>RestfulTool  (<del>RestfulToolkit</del>)</td>
 <td>看接口</td>
 </tr>
 <tr>
@@ -1145,8 +1145,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>建站</tag>
         <tag>美化</tag>
+        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
