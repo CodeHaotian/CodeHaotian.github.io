@@ -1,6 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux 常见命令</title>
+    <url>/archives/fa29a82.html</url>
+    <content><![CDATA[<h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><ul>
+<li><code>ls -l</code>：显示不隐藏的文件与文件夹的详细信息</li>
+<li><code>tar -zxf [文件名]</code> ：解压文件到当前文件夹</li>
+<li><code>pwd</code>：显示当前所在路径</li>
+<li><code>cd ~</code> ： 回到用户主目录（/root）</li>
+<li><code>cp [文件名]  [指路径]</code>： 将文件拷贝到指定目录下</li>
+</ul>
+<a id="more"></a>
+
+<h1 id="查询相关"><a href="#查询相关" class="headerlink" title="查询相关"></a>查询相关</h1><h2 id="ps-命令"><a href="#ps-命令" class="headerlink" title="ps 命令"></a>ps 命令</h2><ul>
+<li>解释：<code>ps</code>是Linux下最常用的也是非常强大的进程查看命令。</li>
+<li>语法：<code>ps [options]</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>options</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-e</td>
+<td>显示所有进程，环境变量</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>全格式</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>不显示标题</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>长格式</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>宽输出</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>显示终端上地所有进程，包括其他用户地进程</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>只显示正在运行地进程</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>显示没有控制终端地进程</td>
+</tr>
+</tbody></table>
+<h2 id="grep-命令"><a href="#grep-命令" class="headerlink" title="grep 命令"></a>grep 命令</h2><ul>
+<li>解释：<code>grep</code> 命令从文本文件或管道数据流中筛选匹配的行及数据。</li>
+<li>语法：<code>grep [OPTION]... PATTERN [FILE]...</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>options</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-v</td>
+<td>显示不包含匹配文本的所有行</td>
+</tr>
+</tbody></table>
+<h2 id="find-命令"><a href="#find-命令" class="headerlink" title="find 命令"></a>find 命令</h2><ul>
+<li>解释： <code>find</code> 命令用来在指定目录下查找文件。</li>
+<li>语法：<code>find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>expression</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-name name, -iname name :</td>
+<td>文件名称符合 name 的文件。iname 会忽略大小写</td>
+</tr>
+<tr>
+<td>-cmin n</td>
+<td>在过去 n 分钟内被修改过</td>
+</tr>
+</tbody></table>
+<h2 id="dmidecode-命令"><a href="#dmidecode-命令" class="headerlink" title="dmidecode 命令"></a>dmidecode 命令</h2><ul>
+<li>解释：在 Linux 系统下获取有关硬件方面的信息。</li>
+<li>语法：<code>dmidecode [OPTIONS]</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>options</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-t（type）</td>
+<td>只显示指定条目的信息</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>只显示指定DMI字符串的信息</td>
+</tr>
+</tbody></table>
+<h2 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h2><ol>
+<li><p>查看指定进程：<code>ps -ef | grep 服务名</code></p>
+ <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ps -ef | grep redis</span></span><br><span class="line">UID       PID   PPID    C     STIME    TTY       TIME       CMD</span><br><span class="line">root      2650     1    0     Jun12     ?        00:01:25   ./redis-server *:6379</span><br><span class="line">root      3564  3498    0     16:55    pts/0     00:00:00   grep --color=auto redis</span><br><span class="line">UID   ：该程序被该 UID 所拥有</span><br><span class="line">PID   ：这个程序的 ID </span><br><span class="line">PPID  ：其上级父程序的ID</span><br><span class="line">C     ：CPU使用的资源百分比</span><br><span class="line">STIME ：系统启动时间</span><br><span class="line">TTY   ：登入者的终端机位置</span><br><span class="line">TIME  ：使用掉的CPU时间</span><br><span class="line">CMD   ：所下达的指令</span><br><span class="line">注:中间的 | 是管道命令 是指ps命令与grep同时执行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找文件路径：<code>find / -name 文件名</code></p>
+ <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">find / -name test.txt <span class="comment"># 查询根目录下名为test.txt的文件</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看内存相关的硬件信息：<code>dmidecode -t memory</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看机器内存信息，只显示大小并过滤掉未安装模块</span></span><br><span class="line">dmidecode -t memory | grep Size: | grep -v <span class="string">"No Module Installed"</span> </span><br><span class="line"><span class="comment"># 主要参数</span></span><br><span class="line">Maximum Memory Module Size: 32768 MB <span class="comment"># 单条支持32G</span></span><br><span class="line">Maximum Total Memory Size: 491520 MB <span class="comment"># 最大支持480G</span></span><br><span class="line">Installed Size: 8192 MB (Single-bank Connection) <span class="comment"># 卡槽安装8G单通道</span></span><br><span class="line">Enabled Size: 8192 MB (Single-bank Connection) <span class="comment"># 启用8G单通道</span></span><br><span class="line">Installed Size: 2048 MB (Double-bank Connection) <span class="comment"># 卡槽安装2G双通道</span></span><br><span class="line">Enabled Size: 2048 MB (Double-bank Connection) <span class="comment"># 启用2G单通道</span></span><br><span class="line">Installed Size: Not Installed <span class="comment"># 卡槽未安装</span></span><br><span class="line">Enabled Size: Not Installed <span class="comment"># 未启用</span></span><br><span class="line"><span class="comment"># 机器总内存 = 10G</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="编辑相关"><a href="#编辑相关" class="headerlink" title="编辑相关"></a>编辑相关</h1><h2 id="vim-命令"><a href="#vim-命令" class="headerlink" title="vim 命令"></a>vim 命令</h2><ul>
+<li>解释：<code>vim</code> 强大的编辑器 </li>
+</ul>
+<h2 id="案例：-1"><a href="#案例：-1" class="headerlink" title="案例："></a>案例：</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">1.编辑文件：vim + 文件名 （当前目录下存在该文件则打开，不存在进行新建） </span><br><span class="line"></span><br><span class="line">/关键字 <span class="comment"># 文件内容中的关键字搜索</span></span><br><span class="line"></span><br><span class="line">2.按 i 正式进入编辑模式</span><br><span class="line">3.按 esc 退出编辑</span><br><span class="line">:q!  不保存文件，强制退出vim命令</span><br><span class="line">:wq  保存文件，退出vim命令</span><br><span class="line">:w   保存文件，不退出vim命令</span><br></pre></td></tr></table></figure>
+
+<h1 id="删除相关"><a href="#删除相关" class="headerlink" title="删除相关"></a>删除相关</h1><h2 id="rm-命令"><a href="#rm-命令" class="headerlink" title="rm 命令"></a>rm 命令</h2><ul>
+<li>解释：Linux系统的删除命令</li>
+<li>语法：<code>rm [options] [参数]</code>   (参数为目录或文件)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>options</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-r</td>
+<td>递归删除</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>强行删除</td>
+</tr>
+</tbody></table>
+<h2 id="案例：-2"><a href="#案例：-2" class="headerlink" title="案例："></a>案例：</h2><ol>
+<li>删除整个系统：<code>rm -rf /*</code> <ul>
+<li><code>/</code>为系统根目录，<code>/*</code>为系统根目录下所有文件的意思。</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo SEO 优化</title>
     <url>/archives/1e319277.html</url>
     <content><![CDATA[<h2 id="什么是SEO"><a href="#什么是SEO" class="headerlink" title="什么是SEO"></a>什么是SEO</h2><p>SEO（Search Engine Optimization）即搜索引擎优化，<a href="https://zh.wikipedia.org/wiki/搜尋引擎最佳化" target="_blank" rel="noopener">维基百科</a> 上给出的定义如下：</p>
