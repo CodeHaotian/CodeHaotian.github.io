@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Github 学生包申请</title>
+    <url>/archives/e5f80bd6.html</url>
+    <content><![CDATA[<p>注意：如不知道什么是Github学生包，请自行<a href="https://www.google.com/" target="_blank" rel="noopener">Google</a>或者<a href="https://education.github.com/pack" target="_blank" rel="noopener">点开此处进行查看</a>。</p>
+<h2 id="前置材料"><a href="#前置材料" class="headerlink" title="前置材料"></a>前置材料</h2><ol>
+<li><p>拥有Github账号一枚</p>
+</li>
+<li><p>年满13岁</p>
+</li>
+<li><p>学历证明、学生证等能证明为在读学生的资料</p>
+</li>
+<li><p>学生邮箱，能提高审核速度，非必须</p>
+<blockquote>
+<p>官网说明如下图所示：<br> <img src="https://upload-images.jianshu.io/upload_images/17704372-4147e435b17542d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="申请条件"></p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+
+<h2 id="申请步骤"><a href="#申请步骤" class="headerlink" title="申请步骤"></a>申请步骤</h2><ol>
+<li>打开 <a href="https://education.github.com/discount_requests/student_application" target="_blank" rel="noopener">申请网址</a> ,如浏览器没有登录 Github 会提示登录。登录完毕后，操作如下图所示：</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/17704372-8b46b1bac92d0687.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="申请界面"></p>
+<ul>
+<li>以上如果你选择的学生邮箱，会自动补齐学校名称，并且后续只需上传学历证明即可。如不是学生邮箱，后续填写资料相对较多。</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/17704372-48d792c7d37c826b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="学生邮箱选择"></p>
+<ol start="2">
+<li>步骤一提交后，具体资料上传界面如下：</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/17704372-24535c89ec805869.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="上传证明"></p>
+<ol start="3">
+<li>提交证明资料后，你的申请邮箱会收到一封邮件，如果资料没问题，一般30天内会收到申请通过的通知邮件。</li>
+</ol>
+<h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><p>申请通过后，学生包内容访问此处:<a href="https://education.github.com/pack/offers" target="_blank" rel="noopener">https://education.github.com/pack/offers</a>，进行查看使用，大致包含内容如下图所示：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/17704372-f7891ea72977c309.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="学生包内容"></p>
+]]></content>
+      <categories>
+        <category>Github</category>
+      </categories>
+      <tags>
+        <tag>白嫖</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux 常见命令</title>
     <url>/archives/fa29a82.html</url>
     <content><![CDATA[<h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><ul>
@@ -1308,8 +1352,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>建站</tag>
         <tag>美化</tag>
+        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
